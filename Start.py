@@ -41,8 +41,8 @@ ship_colum = random_colum(base)
 #print(ship_colum)
 
 # pergunta ao user as coordenadas do barco
-guess_row = int(input("Diga uma linha: "))
-guess_col = int(input("Diga uma coluna: "))
+guess_row = int(input("Diga em qual linha está o barco: "))
+guess_col = int(input("Diga em qual coluna está o barco: "))
 
 if guess_row == ship_row and guess_col == ship_colum:
     print("\nParabéns, você acertou o barco!\n")
