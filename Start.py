@@ -49,6 +49,8 @@ if guess_row == ship_row and guess_col == ship_colum:
 else:
     if guess_row not in range(10)or guess_col not in range(10):
         print ("Oops, escolha algo no oceano.")
+    elif base[guess_row][guess_col] == "X":
+        print ("Você já selecionou essa coordenada")
     else:
         base[guess_row][guess_col] = "X"
         print("\nPuxa, deu água!\n")
