@@ -45,9 +45,11 @@ guess_col = int(input("Diga uma coluna: "))
 
 
 if guess_row == ship_row and guess_col == ship_colum:
-    print("Acertou")
+    print("\nParabéns, você acertou o barco!\n")
 else:
-    print("Água")
+    base[guess_row][guess_col] = "X"
+    print("\nPuxa, deu água!\n")
+    coluna(base)
 
 
 
