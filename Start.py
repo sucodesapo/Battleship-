@@ -44,6 +44,11 @@ guess_row = int(input("Diga uma linha: "))
 guess_col = int(input("Diga uma coluna: "))
 
 
+if guess_row == ship_row and guess_col == ship_colum:
+    print("Acertou")
+else:
+    print("Água")
+
 
 
 
