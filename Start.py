@@ -4,6 +4,7 @@ Created on Wed Sep 16 08:50:46 2015
 
 @author: Alexandre Lima
 """
+
 # importar função randomica
 from random import randint 
 
@@ -36,20 +37,22 @@ def random_colum(base):
     
 ship_row = random_row(base)
 ship_colum = random_colum(base)
-print(ship_row)
-print(ship_colum)
+#print(ship_row)
+#print(ship_colum)
 
 # pergunta ao user as coordenadas do barco
 guess_row = int(input("Diga uma linha: "))
 guess_col = int(input("Diga uma coluna: "))
 
-
 if guess_row == ship_row and guess_col == ship_colum:
     print("\nParabéns, você acertou o barco!\n")
 else:
-    base[guess_row][guess_col] = "X"
-    print("\nPuxa, deu água!\n")
-    coluna(base)
+    if guess_row not in range(10)or guess_col not in range(10):
+        print ("Oops, escolha algo no oceano.")
+    else:
+        base[guess_row][guess_col] = "X"
+        print("\nPuxa, deu água!\n")
+        coluna(base)
 
 
 
