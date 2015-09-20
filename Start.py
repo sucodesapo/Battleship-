@@ -8,9 +8,11 @@ Created on Wed Sep 16 08:50:46 2015
 # importar função randomica
 from random import randint 
 
+#introduz o jogo
+print ("\nLet's play Battleship!\n")
+
 #criando a base para o brinquedo
 base = []
-
 '''
 com o looping, eu vou adicionar itens à lista e fica assim:
 [ base[0] == ['O', 'O', 'O', 'O', 'O']... base[9] == ['O', 'O', 'O', 'O', 'O'] ] 
@@ -37,24 +39,28 @@ def random_colum(base):
     
 ship_row = random_row(base)
 ship_colum = random_colum(base)
-#print(ship_row)
-#print(ship_colum)
+print(ship_row)
+print(ship_colum)
 
-# pergunta ao user as coordenadas do barco
-guess_row = int(input("Diga em qual linha está o barco: "))
-guess_col = int(input("Diga em qual coluna está o barco: "))
+#tentar fazer umas rodadas
+for rodada in range(5):
+    # pergunta ao user as coordenadas do barco
+    guess_row = int(input("Diga em qual linha está o barco: "))
+    guess_col = int(input('Diga em qual coluna está o barco: '))
 
-if guess_row == ship_row and guess_col == ship_colum:
-    print("\nParabéns, você acertou o barco!\n")
-else:
-    if guess_row not in range(10)or guess_col not in range(10):
-        print ("Oops, escolha algo no oceano.")
-    elif base[guess_row][guess_col] == "X":
-        print ("Você já selecionou essa coordenada")
+    if guess_row == ship_row and guess_col == ship_colum:
+        print("\nParabéns, você acertou o barco!\n")
     else:
-        base[guess_row][guess_col] = "X"
-        print("\nPuxa, deu água!\n")
-        coluna(base)
+        if guess_row not in range(10)or guess_col not in range(10):
+            print ("Oops, escolha algo no oceano.")
+        elif base[guess_row][guess_col] == "X":
+            print ("Você já selecionou essa coordenada")
+        else:
+            base[guess_row][guess_col] = "X"
+            print("\nPuxa, deu água!\n")
+            coluna(base)
+    print ("Rodada", rodada + 1)
+
 
 
 
