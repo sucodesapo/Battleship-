@@ -18,3 +18,12 @@ for i in range(10):
     while i < 10:
         base.append(["O"]*10)
         break
+
+# criar função para que mostre a lista por colunas
+
+def coluna(base):
+    for t in base:
+        print(t)
+coluna(base)
+
+
