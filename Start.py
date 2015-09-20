@@ -43,13 +43,14 @@ print(ship_row)
 print(ship_colum)
 
 #tentar fazer umas rodadas
-for rodada in range(5):
+while base[ship_row][ship_colum] == "O":
     # pergunta ao user as coordenadas do barco
     guess_row = int(input("Diga em qual linha está o barco: "))
     guess_col = int(input('Diga em qual coluna está o barco: '))
 
     if guess_row == ship_row and guess_col == ship_colum:
         print("\nParabéns, você acertou o barco!\n")
+        break
     else:
         if guess_row not in range(10)or guess_col not in range(10):
             print ("Oops, escolha algo no oceano.")
@@ -59,8 +60,6 @@ for rodada in range(5):
             base[guess_row][guess_col] = "X"
             print("\nPuxa, deu água!\n")
             coluna(base)
-    print ("Rodada", rodada + 1)
-
 
 
 
