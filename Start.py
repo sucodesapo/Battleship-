@@ -23,7 +23,7 @@ for i in range(10):
 
 def coluna(base):
     for t in base:
-        print(t)
+        print ('  '.join(t))
 coluna(base)
 
 
