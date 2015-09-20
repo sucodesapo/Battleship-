@@ -41,7 +41,8 @@ ship_row = random_row(base)
 ship_colum = random_colum(base)
 print(ship_row)
 print(ship_colum)
-
+erros = 0
+acertos = 0
 #tentar fazer umas rodadas
 while base[ship_row][ship_colum] == "O":
     # pergunta ao user as coordenadas do barco
@@ -53,12 +54,15 @@ while base[ship_row][ship_colum] == "O":
         break
     else:
         if guess_row not in range(10)or guess_col not in range(10):
-            print ("Oops, escolha algo no oceano.")
+            print ("\nOops, escolha algo no oceano.")
         elif base[guess_row][guess_col] == "X":
-            print ("Você já selecionou essa coordenada")
+            print ("\nVocê já selecionou essa coordenada")
         else:
             base[guess_row][guess_col] = "X"
+            erros = erros + 1
             print("\nPuxa, deu água!\n")
+            print("Erros = ", erros)
+            print("Acertos = ", acertos, "\n")
             coluna(base)
 
 
