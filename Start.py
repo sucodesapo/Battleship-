@@ -4,12 +4,10 @@ Created on Wed Sep 16 08:50:46 2015
 
 @author: Alexandre Lima
 """
-
+# importar função randomica
 from random import randint 
 
-
 #criando a base para o brinquedo
-
 base = []
 
 '''
@@ -23,7 +21,6 @@ for i in range(10):
         break
 
 # criar função para que mostre a lista por colunas
-
 def coluna(base):
     for t in base:
         # tira as virgulas e deixa o jogo mais bonito
@@ -31,19 +28,18 @@ def coluna(base):
 coluna(base)
 
 # selecionar um ponto aleatório para esconder o barco
-
 def random_row(base):
     return randint(0,9)
     
-
 def random_colum(base):
     return randint(0,9)
     
 ship_row = random_row(base)
 ship_colum = random_colum(base)
+print(ship_row)
+print(ship_colum)
 
-# perguntar ao user onde está o barco
-
+# pergunta ao user as coordenadas do barco
 guess_row = int(input("Diga uma linha: "))
 guess_col = int(input("Diga uma coluna: "))
 
