@@ -16,11 +16,11 @@ print ("\nBem vindo ao jogo batalha naval, um dos melhores jogos produzidos - ag
 
 #criando a base para o brinquedo
 base = []
+
 '''
 com o looping, eu vou adicionar itens à lista e fica assim:
 [ base[0] == ['O', 'O', 'O', 'O', 'O']... base[9] == ['O', 'O', 'O', 'O', 'O'] ] 
 '''
-
 for i in range(10):
     while i < 10:
         base.append(["O"]*10)
@@ -33,35 +33,40 @@ def coluna(base):
         print ('  '.join(t))
 coluna(base)
 
-# selecionar um ponto aleatório para esconder o barco
-def random_row(base):
+# selecionar os eixos x e y para esconder o barco
+def linha_aleatoria(base):
     return randint(0,9)
     
-def random_colum(base):
+def coluna_aleatoria(base):
     return randint(0,9)
     
-ship_row = random_row(base)
-ship_colum = random_colum(base)
-print(ship_row)
-print(ship_colum)
+eixo_x = linha_aleatoria(base)
+eixo_y = coluna_aleatoria(base)
+
+# mostra onde o barco está
+print(eixo_x)
+print(eixo_y)
+
+#placar
 erros = 0
 acertos = 0
-#tentar fazer umas rodadas
-while base[ship_row][ship_colum] == "O":
-    # pergunta ao user as coordenadas do barco
-    guess_row = int(input("Diga em qual linha está o barco: "))
-    guess_col = int(input('Diga em qual coluna está o barco: '))
 
-    if guess_row == ship_row and guess_col == ship_colum:
+#tentar fazer umas rodadas
+while base[eixo_x][eixo_y] == "O":
+    # pergunta ao user as coordenadas do barco
+    pergunta_linha = int(input("Diga em qual linha está o barco: "))
+    pergunta_coluna = int(input('Diga em qual coluna está o barco: '))
+
+    if pergunta_linha == eixo_x and pergunta_coluna == eixo_y:
         print("\nParabéns, você acertou o barco!\n")
         break
     else:
-        if guess_row not in range(10)or guess_col not in range(10):
+        if pergunta_linha not in range(10)or pergunta_coluna not in range(10):
             print ("\nOops, escolha algo no oceano.")
-        elif base[guess_row][guess_col] == "X":
+        elif base[pergunta_linha][pergunta_coluna] == "X":
             print ("\nVocê já selecionou essa coordenada")
         else:
-            base[guess_row][guess_col] = "X"
+            base[pergunta_linha][pergunta_coluna] = "X"
             erros = erros + 1
             print("\nPuxa, deu água!\n")
             print("Erros = ", erros)

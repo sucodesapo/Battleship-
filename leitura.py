@@ -26,6 +26,7 @@ for l in linhas:
  
     #número de pontos por barco derrubado
     pontos.append(int(partes[1]))
+print(quadrados)
 
     
     
