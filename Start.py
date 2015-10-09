@@ -5,11 +5,14 @@ Created on Wed Sep 16 08:50:46 2015
 @author: Alexandre Lima
 """
 
+#importa o arquivo com os barcos
+import leitura
+
 # importar função randomica
 from random import randint 
 
 #introduz o jogo
-print ("\nLet's play Battleship!\n")
+print ("\nBem vindo ao jogo batalha naval, um dos melhores jogos produzidos - agora em versão virtual(escrever mais explicações sobre o jogo)\n")
 
 #criando a base para o brinquedo
 base = []
